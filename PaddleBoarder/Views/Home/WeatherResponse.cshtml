@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "WeatherResponse";
+}
+
+
+
+
+
+<p id="city"></p>
+<p id="temp"></p>
+<p id="description"></p>
+
+        <h2>Should I PaddleBoard Today?</h2>
+
+        <form action="GetWeather" method="get" id="ToGoOrNotTo">
+            <input type="text" name="city">
+            <button>Get Answer</button>
+        </form>
+            <label>Temperature: </label>@ViewBag.Temp
+           
+            <label>Current Forecast: </label>@ViewBag.Desc
+      
+            @if (ViewBag.Temp > 20)
+            {
+                <p>you should go</p>
+            }
+            else if (ViewBag.Temp < 20)
+            {
+                 <div class="rain"> </div>
+            }
+ 
+ 
+    
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.get("@Url.Action("GetWeather", "Home")"), function (response) {
+                    $("#city").text(response.name);
+                    $("#temp").text(response.main.temp);
+                });
+        });
+
+    </script> -->

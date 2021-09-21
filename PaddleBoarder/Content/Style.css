@@ -1,0 +1,53 @@
+﻿
+body {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1)0%, rgba(253,187,45,1)100%);
+    background-repeat: no-repeat; 
+    display:flex;
+    overflow:inherit;
+}
+
+h2 {
+    position:fixed;
+}
+#wrapperbox {
+    width: 100%;
+    margin: 0px auto;
+    text-align:center;
+}
+
+.rain {
+    height: 50vh;
+    margin: 0 0;
+    padding: 0 0;
+    background-repeat: repeat;
+    animation-name: rain;
+    animation: rain 10s linear infinite;
+    background: url(https://pngimg.com/uploads/rain/rain_PNG13470.png)repeat; 
+    overflow-wrap:inherit;
+   
+}
+
+
+@keyframes rain {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 20% 50%;
+    }
+}
+
+.myfooter {
+    height: 50px;
+    width: 100%;
+    background-color: black !important;
+    position: fixed;
+    bottom: 0;
+}
+
+
+
+
+
