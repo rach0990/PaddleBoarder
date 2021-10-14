@@ -1,51 +1,86 @@
 ﻿
 body {
-    background: rgb(34,193,195);
+    padding: 50px;
     background: linear-gradient(0deg, rgba(34,193,195,1)0%, rgba(253,187,45,1)100%);
-    background-repeat: no-repeat; 
-    display:flex;
-    overflow:inherit;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    overflow: inherit;
 }
 
-h2 {
-    position:fixed;
+#page-container{
+    position:relative;
+    min-height:100vh;
 }
-#wrapperbox {
-    width: 100%;
-    margin: 0px auto;
-    text-align:center;
-}
-
-.rain {
-    height: 50vh;
-    margin: 0 0;
-    padding: 0 0;
-    background-repeat: repeat;
-    animation-name: rain;
-    animation: rain 10s linear infinite;
-    background: url(https://pngimg.com/uploads/rain/rain_PNG13470.png)repeat; 
-    overflow-wrap:inherit;
+#content-wrap {
+    padding-bottom:2.5rem;
    
 }
+#footer {
+    position: relative;
+    bottom: 0 !important;
+    width: 100%;
+    height: 4.5rem !important;
+    background-color: black !important;
+    color:white !important;
+}
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height: 40%;
+    border-radius: 5px;
+    background-image: url(https://pngimg.com/uploads/rain/rain_PNG13470.png);  
+    animation: rain 1.3s linear infinite;
+}
+
+.suncard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height: 40%;
+    border-radius: 5px;
+    background-image: url(https://pngimg.com/uploads/sun/sun_PNG13422.png);
+    background-repeat: no-repeat;
+    animation: sun 1.3s infinite;
+    animation-iteration-count: infinite;
+}
+
+    .container {
+    padding: 2px 16px;
+    
+}
 
 @keyframes rain {
     0% {
         background-position: 0% 0%;
+        
+    }
+
+    100%{
+        background-position: 20% -300%
+    }
+}
+
+@keyframes sun {
+
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 50%;
     }
 
     100% {
-        background-position: 20% 50%;
+        background-size: 100%;
     }
 }
 
-.myfooter {
-    height: 50px;
-    width: 100%;
-    background-color: black !important;
-    position: fixed;
-    bottom: 0;
-}
+
+    
+
 
 
 

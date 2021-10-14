@@ -3,32 +3,41 @@
     ViewBag.Title = "WeatherResponse";
 }
 
-
-
-
-
-<p id="city"></p>
-<p id="temp"></p>
-<p id="description"></p>
-
-        <h2>Should I PaddleBoard Today?</h2>
-
+        <div class="jumbotron">
+            <h1>Paddleboard Everyday</h1>
+                 <p>Somedays are better than others for paddleboarding
+                     <br>so let our weather checker decide for you!</p>
+        </div>
+        
+        <h2>Should I Paddleboard today?</h2>
         <form action="GetWeather" method="get" id="ToGoOrNotTo">
             <input type="text" name="city">
-            <button>Get Answer</button>
-        </form>
-            <label>Temperature: </label>@ViewBag.Temp
-           
+            <button>Get Answer</button>          
+
             <label>Current Forecast: </label>@ViewBag.Desc
+        </form>
       
             @if (ViewBag.Temp > 20)
-            {
-                <p>you should go</p>
+            { 
+                <div class="suncard">
+                    <div class="container">
+                        <p>Temperature: @ViewBag.Temp</p>
+                        <p>you should go</p>
+                    </div>
+                </div>
+               
             }
             else if (ViewBag.Temp < 20)
             {
-                 <div class="rain"> </div>
+                 <div class="card">
+                     <div class="container">
+                         <p>Temperature: @ViewBag.Temp</p>
+                 </div>
+                     </div>
             }
+
+    
+    
  
  
     
