@@ -35,7 +35,7 @@ namespace PaddleBoarder.Controllers
             return View();
         }
 
-        //returns main page. rename home.chtml and remove method above
+        //TODO returns main page. rename home.chtml and remove method above
         public ActionResult WeatherResponse()
         {
             return View();
@@ -44,27 +44,28 @@ namespace PaddleBoarder.Controllers
         public async Task<ActionResult> GetWeather(string city)
         {
             ApiWorker.InitializeClient();
-
             ApiWorker weatherApi= new ApiWorker();
-
-
-
-            // var JsonResponse = Json(weatherApi.GetWeatherForcast(city), JsonRequestBehavior.AllowGet);
             var response = await weatherApi.GetWeatherForcast(city);
-            
-             if (response != null)
-             {
 
+            if (response != null)
+            {
                 ViewBag.Temp = response.main.temp;
                 ViewBag.Desc = response.weather[0].description;
-      
-             }
-          
+
+                DescriptionData idResponse = new DescriptionData { };
              
-                 return View("WeatherResponse");
+                ViewModel rainView = new ViewModel { 
 
-        }
+                   IsRain = idResponse.IdRain.Contains(response.weather[0].id),
+                   IsCloud = idResponse.IdCloud.Contains(response.weather[0].id),
+                   IsSun = idResponse.IdSun.Contains(response.weather[0].id)
+            };
 
-        
+                return View("WeatherResponse", rainView);
+
+             }         
+            
+                return View("WeatherResponse");
+        }        
     }
 }

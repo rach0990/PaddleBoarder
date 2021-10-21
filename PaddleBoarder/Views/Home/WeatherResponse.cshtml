@@ -1,4 +1,5 @@
-﻿
+﻿@model PaddleBoarder.Models.ViewModel
+   
 @{
     ViewBag.Title = "WeatherResponse";
 }
@@ -16,32 +17,36 @@
 
             <label>Current Forecast: </label>@ViewBag.Desc
         </form>
-      
-            @if (ViewBag.Temp > 20)
-            { 
-                <div class="suncard">
+         @if (Model!= null)
+         {
+
+            if (Model.IsRain)
+             {
+                <div class="card">
                     <div class="container">
                         <p>Temperature: @ViewBag.Temp</p>
-                        <p>you should go</p>
+                        <p>Maybe give today a miss</p>
                     </div>
                 </div>
-               
-            }
-            else if (ViewBag.Temp < 20)
-            {
-                 <div class="card">
+
+             }
+             else if (Model.IsSun)
+             {
+                 <div class="suncard">
                      <div class="container">
                          <p>Temperature: @ViewBag.Temp</p>
-                 </div>
+                         <p>you should go</p>
                      </div>
-            }
+                 </div>
+             }
+         }
 
-    
-    
- 
- 
-    
-            
+
+
+
+
+
+
 
 
 
