@@ -22,7 +22,7 @@
 
             if (Model.IsRain)
              {
-                <div class="card">
+                <div class="raincard">
                     <div class="container">
                         <p>Temperature: @ViewBag.Temp</p>
                         <p>Maybe give today a miss</p>
@@ -36,6 +36,23 @@
                      <div class="container">
                          <p>Temperature: @ViewBag.Temp</p>
                          <p>you should go</p>
+                     </div>
+                 </div>
+             }
+             else if (Model.IsCloud)
+                {
+                    <div class="cloudcard">
+                        <div class="container">
+                            <p></p>
+                        </div>
+                    </div>
+             }
+             else if (Model.IsThunder)
+             {
+                 <div class="thundercard">
+                     <div class="container">
+                         <p>THUNDER</p>
+
                      </div>
                  </div>
              }

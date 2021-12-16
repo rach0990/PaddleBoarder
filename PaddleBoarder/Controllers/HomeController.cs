@@ -16,7 +16,7 @@ namespace PaddleBoarder.Controllers
     public class HomeController : Controller
     {
         
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
@@ -53,19 +53,25 @@ namespace PaddleBoarder.Controllers
                 ViewBag.Desc = response.weather[0].description;
 
                 DescriptionData idResponse = new DescriptionData { };
-             
-                ViewModel rainView = new ViewModel { 
 
-                   IsRain = idResponse.IdRain.Contains(response.weather[0].id),
-                   IsCloud = idResponse.IdCloud.Contains(response.weather[0].id),
-                   IsSun = idResponse.IdSun.Contains(response.weather[0].id)
-            };
+                ViewModel weatherView = new ViewModel {
 
-                return View("WeatherResponse", rainView);
+                    IsRain = idResponse.IdRain.Contains(response.weather[0].id),
+                    IsSun = idResponse.IdSun.Contains(response.weather[0].id),
+                    IsCloud = idResponse.IdCloud.Contains(response.weather[0].id),
+                    IsThunder = idResponse.IdThunder.Contains(response.weather[0].id)
+                };
+
+                return View("WeatherResponse", weatherView);
 
              }         
             
                 return View("WeatherResponse");
-        }        
+        }    
+        
+        public ActionResult Book ()
+        {
+            return View();
+        }
     }
 }
