@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Book";
+}
+<body>
+    <h2>Book</h2>
+
+    <div class="cards">
+        <!--Liverpool-->
+        <div class="slideshow-container" data-cycle="4000">
+
+            <div class="mySlides">
+                <img src="https://lh3.googleusercontent.com/5WTUPUHiAt1TDG68xIuoLymo2O-OBKDc2VqioVWrpg_nky-HFhsBPIfMOSfwgp_7NeLtWN0=s85">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://lh3.googleusercontent.com/Z2vMTbBhBpezfqQspY4zS2RantOmEmJLKK0vCf82_wej85odW4S685HjiikZ4FIX-RAD6A=s128">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://t4.ftcdn.net/jpg/01/32/61/95/240_F_132619582_1XTAGGmVEP3IdWb1qYBvII9p6XCHEdi5.jpg">
+            </div>
+            WildShore liverpool
+            <p><button>Book</button>
+
+        </div>
+
+
+        <!--Delamere-->
+        <div class="slideshow-container" data-cycle="4000">
+
+
+            <div class="mySlides">
+                <img src="https://t4.ftcdn.net/jpg/01/31/28/81/240_F_131288172_Eqwdi5ri51hfCU65hinC8GWquVw35ASA.jpg">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ69vjiQNWs_K7KQ8tx6y5dpu6Umm6EUDBiA&usqp=CAU">
+            </div>
+            Delamere Wild Shore
+            <p> <button> Book </button></p>
+
+        </div>
+
+        <!--NewBrighton-->
+        <div class="slideshow-container" data-cycle="4000">
+
+
+            <div class="mySlides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNHmdKo3vTlhpSQ5C7clO-g8NcQplnPJRc6A&usqp=CAU">
+            </div>
+
+            <div class="mySlides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbLp0VWwN9tydKqf6DIGRmAaFS5WftYKjTBQ&usqp=CAU">
+            </div>
+            New Brighton Wild Shore
+            <p> <button> Book </button></p>
+
+        </div>
+        <!--Dundee-->
+        <!--Dunbar-->
+    </div>
+
+        <script>
+            var slideshowContainers = document.getElementsByClassName("slideshow-container");
+
+            for (let s = 0; s < slideshowContainers.length; s++) {
+                var cycle = slideshowContainers[s].dataset.cycle;
+                var slides = slideshowContainers[s].querySelectorAll('.mySlides');
+                var slideIndex = 0;
+
+                showSlides(slides, slideIndex, cycle);
+            };
+
+            function showSlides(slides, slideIndex, cycle) {
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                };
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                };
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(function () {
+                    showSlides(slides, slideIndex, cycle)
+                }, cycle);
+            };
+        </script>
+</body>
