@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="jumbotron">
+    <h1>Paddler</h1>
+    <p class="lead">Want to go paddleBoarding but, worried about the weather? no worries! let our site tell you</p>
+    <p><a href="@Url.Action("WeatherResponse", "Home")" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>Are you new to paddleboarding? find out all you need to know below </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Where can I book?</h2>
+        <p>View all the places that offer paddleboarding, near you!</p>
+        <p><a class="btn btn-default" href="@Url.Action("Book","Home")">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Buy your board</h2>
+        <p>Looking for a new setup, or just beginning? Find all you need to get out on the water</p>
+        <p><a class="btn btn-default" href="https://www.aquaplanetsports.com/">Learn more &raquo;</a></p>
+    </div>
+    </div>

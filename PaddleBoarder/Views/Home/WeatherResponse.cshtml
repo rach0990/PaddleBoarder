@@ -1,62 +1,75 @@
 ﻿@model PaddleBoarder.Models.ViewModel
-   
+
 @{
     ViewBag.Title = "WeatherResponse";
 }
 
-        <div class="jumbotron">
-            <h1>Paddleboard Everyday</h1>
-                 <p>Somedays are better than others for paddleboarding
-                     <br>so let our weather checker decide for you!</p>
+
+<div class="jumbotron">
+    <h1>Paddleboard Everyday</h1>
+    <p>
+        Somedays are better than others for paddleboarding
+        <br>so let our weather checker decide for you!
+    </p>
+</div>
+
+<h2>Should I Paddleboard today?</h2>
+<form action="GetWeather" method="get" id="ToGoOrNotTo">
+    <input type="text" class="textbox-input" name="city" placeholder="Enter city">
+    <button class="buttonbook">Get Answer</button>
+
+    <label>Current Forecast: </label>@ViewBag.Desc
+</form>
+@if (Model != null)
+{
+
+    if (Model.IsRain)
+    {
+        <div class="raincard">
+            <div class="container">
+                <p>Temperature: @ViewBag.Temp</p>
+                <p>Maybe give today a miss</p>
+            </div>
         </div>
-        
-        <h2>Should I Paddleboard today?</h2>
-        <form action="GetWeather" method="get" id="ToGoOrNotTo">
-            <input type="text" name="city">
-            <button>Get Answer</button>          
 
-            <label>Current Forecast: </label>@ViewBag.Desc
-        </form>
-         @if (Model!= null)
-         {
+    }
+    else if (Model.IsSun)
+    {
+        <div class="suncard">
+            <div class="container">
+                <p>Temperature: @ViewBag.Temp</p>
+                <p>you should go</p>
+            </div>
+        </div>
+    }
+    else if (Model.IsCloud)
+    {
+        <div class="cloudcard">
+            <div class="container">
+                <p>It's looking good</p>
+            </div>
+        </div>
+    }
+    else if (Model.IsThunder)
+    {
+        <div class="thundercard">
+            <div class="container">
+                <p>THUNDER</p>
+                <p>Danger! do not go </p>
 
-            if (Model.IsRain)
-             {
-                <div class="raincard">
-                    <div class="container">
-                        <p>Temperature: @ViewBag.Temp</p>
-                        <p>Maybe give today a miss</p>
-                    </div>
-                </div>
-
-             }
-             else if (Model.IsSun)
-             {
-                 <div class="suncard">
-                     <div class="container">
-                         <p>Temperature: @ViewBag.Temp</p>
-                         <p>you should go</p>
-                     </div>
-                 </div>
-             }
-             else if (Model.IsCloud)
-                {
-                    <div class="cloudcard">
-                        <div class="container">
-                            <p></p>
-                        </div>
-                    </div>
-             }
-             else if (Model.IsThunder)
-             {
-                 <div class="thundercard">
-                     <div class="container">
-                         <p>THUNDER</p>
-
-                     </div>
-                 </div>
-             }
-         }
+            </div>
+        </div>
+    }
+    <!--if (ViewBag.Temp >= 15)
+    {
+        <p>The temperature is warm though!@ViewBag.Temp</p>
+    }
+    else
+    {
+        <p>It is chilly though! @ViewBag.Temp</p>
+    }
+        -->
+}
 
 
 
@@ -76,13 +89,15 @@
 
 
 
-    <!--<script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $.get("@Url.Action("GetWeather", "Home")"), function (response) {
-                    $("#city").text(response.name);
-                    $("#temp").text(response.main.temp);
-                });
-        });
 
-    </script> -->
+
+<!--<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("@Url.Action("GetWeather", "Home")"), function (response) {
+                $("#city").text(response.name);
+                $("#temp").text(response.main.temp);
+            });
+    });
+
+</script> -->

@@ -20,18 +20,26 @@ body {
     position: relative;
     bottom: 0 !important;
     width: 100%;
-    height: 4.5rem !important;
-    background-color: black !important;
     color:white !important;
 }
-
+.textbox-input {
+    padding: 5px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 11px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
 .raincard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 20%;
     height: 40%;
     border-radius: 5px;
-    background-image: url(https://pngimg.com/uploads/rain/rain_PNG13470.png);  
+    background-image: url(https://pngimg.com/uploads/rain/rain_PNG13470.png);
     animation: rain 1.3s linear infinite;
 }
 
@@ -112,7 +120,7 @@ body {
          background-image:none;
      }
     100% {
-        background-image: url(https://pngimg.com/uploads/thunder/thunder_PNG4.png)
+        background-image: url(https://pngimg.com/uploads/thunder/thunder_PNG4.png);
     }
 }
 
@@ -125,6 +133,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
+    font-family: Arial,Helvetica,sans-serif;
 }
 
 .mySlides {
@@ -145,9 +154,30 @@ img {
     border-radius: 4px;
     padding: .5rem;
     text-align: center;
+  
+}
+.buttonbook {
+    background-color: #36A9AE;
+    background-image: linear-gradient(#37ADB2, #329CA0);
+    border: 1px solid #2A8387;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 11px 15px 12px;
+    text-align: center;
+    transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
 }
 
-
+    .buttonbook:hover {
+        box-shadow: rgba(255, 255, 255, 0.3) 0 0 2px inset, rgba(0, 0, 0, 0.4) 0 1px 2px;
+        text-decoration: none;
+        transition-duration: .15s, .15s;
+    }
 
 @media only screen and (max-width: 300px) {
     .text {
